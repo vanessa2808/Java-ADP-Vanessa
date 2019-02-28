@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;example.Loop&apos; to &apos;Loop102&apos;&#x0D;&#x0A;- Original project: &apos;21_Hw01_NguyenThiHongYen_ISCS201A&apos;&#x0D;&#x0A;- Original element: &apos;example.Loop&apos;&#x0D;&#x0A;- Renamed element: &apos;example.Loop102&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Loop&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;example{Loop.java[Loop" matchStrategy="1" name="Loop102" qualified="false" references="true" similarDeclarations="false" stamp="1535766564030" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,72 @@
+package object_oriented_programing_system;
+import java.util.Scanner;
+public class Points
+{
+	private static Scanner sc;
+	private double obscissa,ordinate;
+	public Points() 
+	{
+		this.obscissa=0;
+		this.ordinate=0;
+	}
+	public Points(double x,double y)
+	{
+		this.obscissa=x;
+		this.ordinate=y;
+	}
+	public void output() 
+	{
+		System.out.println(obscissa+";"+ordinate);
+	}
+	public  double  DistancesPoints (Points B)
+	{
+		Points AB= new Points();
+		AB.obscissa=B.obscissa-this.obscissa;
+		AB.ordinate=B.ordinate-this.ordinate;
+		double DistancesAB=Math.sqrt(Math.pow(AB.obscissa, 2)+Math.pow(AB.ordinate, 2));
+		return DistancesAB;
+	}
+	public  double DistancesPoints1 (Points C)
+	{
+		Points AC= new Points();
+		AC.obscissa=C.obscissa-this.obscissa;
+		AC.ordinate=C.ordinate-this.ordinate;
+		double DistancesAC=Math.sqrt(Math.pow(AC.obscissa, 2)+Math.pow(AC.ordinate, 2));
+		return DistancesAC;
+	}
+	public double DistancesPoints2(Points B,Points C) 
+	{
+		Points BC=new Points();
+		BC.obscissa=B.obscissa-C.obscissa;
+		BC.ordinate=B.ordinate-C.ordinate;
+		double DistancesBC=Math.sqrt(Math.pow(B.obscissa-C.obscissa, 2)+Math.pow(B.ordinate-C.ordinate, 2));
+		return DistancesBC;
+	}
+	public Double TrianglePoints(Points AB,Points AC, Points BC,Points A,Points B,Points C) 
+	{
+		if((AB.obscissa/AC.obscissa)==(AB.ordinate/AC.ordinate)) return null;
+		else 
+		{
+			double Areas=1/2*Math.abs((AB.obscissa*AC.ordinate))-(C.obscissa-this.obscissa*B.ordinate-this.ordinate);
+			return Areas;
+		}
+		
+	}
+	public static void main(String[]args) 
+	{
+		Points A= new Points(1,1);
+		A.output();
+		Points B=new Points(4,4);
+		B.output();
+		Points C=new Points(3,7);
+		C.output();
+		
+		
+		double AB=A.DistancesPoints(B);
+		
+
+		
+		
+	}
+
+}

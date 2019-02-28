@@ -1,0 +1,8 @@
+16.2 to 23.5, change = 7.3
+23.5 to 19.1, change = -4.4
+19.1 to 7.4, change =-11.7
+7.4 to 22.8, change = 15.4
+22.8 to 18.5, change =-4.3
+18.5 to -1.8, change = -20.3
+-1.8 to 14.9, change = 16.7
+14.9 to 16.1, change =1.2

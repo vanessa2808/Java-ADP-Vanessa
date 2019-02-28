@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Address.java&apos; to &apos;test.package-info.java&apos;&#x0D;&#x0A;- Original project: &apos;Polymorphism&apos;&#x0D;&#x0A;- Destination element: &apos;test.package-info.java&apos;&#x0D;&#x0A;- Original element: &apos;Address.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="=MidTerm/src&lt;test{package-info.java" element1="Address.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1543887934508" units="0" version="1.0"/>
+</session>

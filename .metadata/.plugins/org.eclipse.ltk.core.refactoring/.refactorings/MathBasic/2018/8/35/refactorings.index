@@ -1,0 +1,6 @@
+1535270435538	Delete element
+1535290236015	Convert local variable 'S' to field
+1535290243593	Convert local variable 'C' to field
+1535290343013	Encapsulate field 's'
+1535290361211	Encapsulate field 'c2'
+1535676523914	Rename type 'DivisionFor2'

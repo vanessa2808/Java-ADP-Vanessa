@@ -1,0 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package homeWork;
+
+/**
+ *
+ * @author kuon
+ */
+public class BitString {
+
+    private int lengthPerSubString;
+    private String[] subStringArray;
+    private String[] fullStringArray;
+    private int numberOfSubString;
+    private int numberOfFullString;
+    private int postion = 0;
+    private int postion2 = 0;
+
+    public BitString(int lengthPerString, String toIncludeString) {
+        this.lengthPerSubString = lengthPerString-toIncludeString.length();
+        this.numberOfSubString = (int) Math.pow(2, this.lengthPerSubString);
+        this.numberOfFullString = numberOfSubString*(this.lengthPerSubString+1);
+        subStringArray = new String[this.numberOfSubString];
+        fullStringArray = new String[this.numberOfFullString];
+        makePart(this.lengthPerSubString, new String());
+        
+        makeFull(toIncludeString);
+        this.fullStringArray = sort(this.fullStringArray);
+    }
+
+    private void addStringToSubStringArray(String str) {
+        subStringArray[postion++] = str; 
+    }
+
+    private void addStringToFullStringArray(String str) {
+        fullStringArray[postion2++] = str;
+     
+    }
+    private void makePart(int len, String str) {
+
+        if (len > 0) {
+            makePart(len - 1, str + "0");
+            makePart(len - 1, str + "1");
+          
+        } else {
+            addStringToSubStringArray(str);
+        }
+    }
+    private void makeFull(String str){
+        
+        for (int i =0; i<this.numberOfSubString;i++){
+           
+            String string = subStringArray[i];
+            for (int j = this.lengthPerSubString-1;j>=-1;j--){
+                if (j==-1){
+                    addStringToFullStringArray(str+string);
+                    continue;
+                }
+                String head ="";
+                for (int k = 0; k<=j ;k++){
+                    head = head + string.charAt(k);
+                }
+                String tail = "";
+                for (int k=j+1;k<this.lengthPerSubString;k++){
+                    tail = tail+ string.charAt(k);
+                }
+                addStringToFullStringArray(head+str+tail);
+            }
+        }
+    }
+    private String[] sort(String[] strs){
+    	int count=1;
+        for (int i = 0; i< strs.length-1;i++){
+            int iMin = i;
+            for (int j=i+1;j<strs.length;j++){    
+                if (strs[iMin].compareTo(strs[j])>0){
+                    iMin = j;
+                }
+            }
+            String temp = strs[i];
+            strs[i] = strs[iMin];
+            strs[iMin] = temp;
+            count=count+1;
+        }
+        System.out.println(count);
+        return strs;
+    }
+    public String getGeneratedString(){
+        String temp = "";
+        for (int i = 0; i< fullStringArray.length;i++){
+            if (i>0&&fullStringArray[i]==fullStringArray[i-1]){
+                continue;
+            }
+            if (temp==""){
+                temp = fullStringArray[i];
+            }else{
+                temp = temp +", "+fullStringArray[i];
+
+            }
+        }
+        return temp;
+    }
+}

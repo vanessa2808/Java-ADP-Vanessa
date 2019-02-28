@@ -1,0 +1,73 @@
+package object_oriented_programing_system;
+import java.util.Scanner ;
+public class PhanSo 
+{
+	private static Scanner sc;
+	private int numerator,denominator;
+	public PhanSo ()
+	{
+		this.denominator=1;
+	}
+	public  PhanSo(int n,int d)
+	{
+		this.numerator=n;
+		this.denominator=d;
+	}
+
+
+
+	public void  output() 
+	{
+		System.out.println(numerator+"/"+denominator);
+	}
+	public PhanSo plus(PhanSo f2)
+	{
+		PhanSo f3= new PhanSo ();
+		f3.numerator=(this.numerator*f2.denominator)+(this.denominator*f2.numerator);
+		f3.denominator=this.denominator*f2.denominator;
+		return f3;
+	}
+	public PhanSo minus(PhanSo f2) 
+	{
+		PhanSo f4=new PhanSo();
+		f4.numerator=(this.numerator*f2.denominator)-(this.denominator*f2.numerator);
+		f4.denominator=this.denominator*f2.denominator;
+		return f4;
+	}
+	public PhanSo mutilplication(PhanSo f2) 
+	{
+		PhanSo f5=new PhanSo();
+		f5.numerator=this.numerator*f2.numerator;
+		f5.denominator=this.denominator*f2.denominator;
+		return f5;
+	}
+	public PhanSo devide (PhanSo f2) 
+	{
+		if(f2.numerator==0) return null;
+		PhanSo f6=new PhanSo();
+		f6.numerator=this.numerator*f2.denominator;
+		f6.denominator=this.denominator*f2.numerator;
+		return f6;
+	}
+
+	public static void main(String []args) 
+	{
+		PhanSo f1= new PhanSo(1,2);
+		f1.output();
+		PhanSo f2=new PhanSo(3,4);
+		f2.output();
+
+
+		PhanSo f3= f1.plus(f2);
+		f3.output();
+		PhanSo f4=f1.minus(f2);
+		f4.output();
+		PhanSo f5=f1.mutilplication(f2);
+		f5.output();
+		PhanSo f6=f1.devide(f2);
+		if (f6==null) System.out.println("divide by zero");
+		else f6.output();
+
+
+	}
+}
